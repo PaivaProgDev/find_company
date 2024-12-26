@@ -1,0 +1,30 @@
+@media screen and (max-width: 610px) {
+    .company-card {
+        flex-direction: column !important;
+        padding: 1.5rem !important;
+        height: 78% !important;
+    }
+
+    .company-data {
+        height: 600px !important;
+    }
+
+    .img-card {
+        display: none !important;
+    }
+
+    .title {
+        font-size: 2rem !important;
+    }
+
+    .project-header {
+        margin-top: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 268px) {
+    .project-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+}

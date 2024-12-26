@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="./assets/favicon/company.ico" type="image/x-icon">
+   <link rel="stylesheet" href="./css/main.css">
+   <title>Find Company | CNPJ</title>
+</head>
+
+<body>
+   <div class="container">
+      <header class="project-header">
+         <h1 class="title">Find Company</h1>
+         <ion-icon class="company-icon" name="business-sharp"></ion-icon>
+      </header>
+      <main class="company-card">
+         <div class="company-find">
+            <form class="insert-company">
+               <label class="label">
+                  <ion-icon class="company-icon-input" name="business-sharp"></ion-icon>
+                  <input class="field" type="number" placeholder="CNPJ com 14 números">
+                  <ion-icon class="field-clear" name="close-outline"></ion-icon>
+               </label>
+               <button class="btn" type="submit">Buscar</button>
+            </form>
+            <img class="img-card" src="./assets/img/form-img.png" alt="Imagem do formulário">
+         </div>
+         <div class="company-data"></div>
+      </main>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal-bg">
+      <div class="modal">
+         <div class="modal-header">
+            <div class="alert-header">
+               <ion-icon name="alert-circle"></ion-icon>
+               <h1 class="modal-title">Houve um erro...</h1>
+            </div>
+            <ion-icon class="modal-close" name="close-outline"></ion-icon>
+         </div>
+         <h3 class="modal-info"></h3>
+      </div>
+   </div>
+
+   <script type="module" src="./scripts/script.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
