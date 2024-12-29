@@ -6,7 +6,7 @@
     }
 
     .company-data {
-        height: 600px !important;
+        border-radius: 10px !important;
     }
 
     .img-card {
