@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
 @import './mediaQueries.css';
 @import './modals/modalError.css';
+@import './menu.css';
 
 :root {
    /* Colors */
@@ -140,7 +141,7 @@ html {
    color: var(--terciary-color);
 }
 
-.btn {
+.btn-search {
    background-color: var(--primary-color);
    color: var(--white-color);
    padding: 5px;
@@ -152,6 +153,10 @@ html {
    font-size: 1.4rem;
    letter-spacing: 2px;
    width: 100%;
+}
+
+.btn-search:disabled {
+   background-color: var(--secondary-color);
 }
 
 .img-card {
