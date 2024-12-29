@@ -35,6 +35,13 @@ document.querySelector('.insert-company').addEventListener('submit', (e) => {
    }
 });
 
+// Limpa o input ao clicar sobre o botão X
+document.addEventListener('click', (e)=> {
+   if (e.target.classList.contains('field-clear')) {
+      cnpj.value = ''
+   }
+})
+
 // Fecha com o modal com o botão
 document.querySelector('.modal-close').addEventListener('click', () => {
    modalBg.classList.remove('active');
