@@ -1,5 +1,6 @@
 import { createTable } from "./createTable.js";
 import { modalError, closeModalError } from "./components/modals.js";
+import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
 
 const cnpj = document.querySelector('.field');
 const infoModal = document.querySelector('.modal-info');
@@ -10,6 +11,7 @@ const btnSearch = document.querySelector('.btn-search')
 // Chamada a API
 document.querySelector('.insert-company').addEventListener('submit', (e) => {
    btnSearch.disabled = true
+   screenLoader()
    e.preventDefault();
 
    let cnpjValue = cnpj.value;
@@ -18,7 +20,7 @@ document.querySelector('.insert-company').addEventListener('submit', (e) => {
       fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpjValue}`)
          .then(res => {
             if(!res.ok) {
-               modalError('Houve um erro')
+               modalError('CNPJ não encontrado...')
             }
             return res.json()
          })
@@ -27,15 +29,10 @@ document.querySelector('.insert-company').addEventListener('submit', (e) => {
                createTable(data);
                cnpj.value = '';
             }
-
-            // if (data.cnpj !== cnpjValue) {
-            //    modalBg.classList.add('active');
-            //    modal.classList.add('active');
-            //    infoModal.innerHTML = 'CNPJ não encontrado...';
-            // }
          })
          .finally(() => {
             btnSearch.disabled = false
+            closeScreenLoader()
          })
          .catch(err => {
             modalError('Houve um erro ao buscar a API')
