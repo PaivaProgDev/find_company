@@ -2,19 +2,51 @@
 <html lang="pt-br">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="./assets/favicon/company.ico" type="image/x-icon">
-   <link rel="stylesheet" href="./css/main.css">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="shortcut icon" href="./assets/favicon/company.ico" type="image/x-icon" />
+   <link rel="stylesheet" href="./css/main.css" />
    <title>Find Company | CNPJ</title>
 </head>
 
 <body>
    <div class="container">
-      <header class="top-header">
-         <button type="button">
-            <ion-icon class="menu-icon" name="menu"></ion-icon>
-         </button>
+      <header class="top-header" style="display: none;">
+         <details class="menu-background">
+            <summary class="details-header" style="position: relative;">
+               <ion-icon class="summary-icon" name="newspaper"></ion-icon>
+               <span>Lista de CNPJ</span>
+            </summary>
+            <ul class="list-assets-menu" style="position: absolute;">
+               <li>
+                  <button type="button">
+                     <span>Lista de CNPJ</span>
+                     <ul>
+                        <li>06801721000187</li>
+                        <li>18945931000128</li>
+                        <li>16515695000184</li>
+                        <li>40037918000120</li>
+                        <li>13698045000123</li>
+                        <li>03083246000162</li>
+                        <li>26562811000170</li>
+                        <li>02770726000139</li>
+                        <li>13846911000186</li>
+                        <li>46559641000181</li>
+                        <li>38663164000171</li>
+                        <li>31222877000150</li>
+                        <li>16464144000139</li>
+                        <li>35893967000124</li>
+                        <li>47733261000184</li>
+                        <li>13779893000167</li>
+                        <li>14156441000191</li>
+                        <li>17531370000158</li>
+                        <li>36299573000105</li>
+                        <li>92651058000113</li>
+                     </ul>
+                  </button>
+               </li>
+            </ul>
+         </details>
       </header>
       <div class="project-header">
          <h1 class="title">Find Company</h1>
@@ -24,18 +56,20 @@
          <div class="company-find">
             <form class="insert-company">
                <label class="label" tabindex="-1">
-                  <ion-icon class="company-icon-input" name="business-sharp"></ion-icon>
-                  <input class="field" type="number" placeholder="CNPJ com 14 números">
+                  <ion-icon class="search-icon-input" name="search"></ion-icon>
+                  <input class="field" type="number" placeholder="CNPJ com 14 números" />
                   <ion-icon class="field-clear" name="close-outline"></ion-icon>
                </label>
-               <button class="btn-search" type="submit" tabindex="0">Buscar</button>
+               <button class="btn-search" type="submit" tabindex="0">
+                  Buscar
+               </button>
             </form>
-            <img class="img-card" src="./assets/img/form-img.png" alt="Imagem do formulário">
+            <img class="img-card" src="./assets/img/form-img.png" alt="Imagem do formulário" />
          </div>
          <div class="company-data"></div>
       </main>
    </div>
-   
+
    <script type="module" src="./scripts/main.js"></script>
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
