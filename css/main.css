@@ -329,16 +329,28 @@ html {
 .details-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 30px;
   border: solid 1px gray;
-  padding: 8px 8px 8px 8px;
   color: var(--primary-color);
   border: 0;
   cursor: pointer;
   border: solid 2px var(--primary-color);
   transition: 150ms ease-in-out;
   background-color: var(--white-color);
+  width: 100%;
+  padding: 0 9px 0 0;
+}
+
+.details-header>div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.arrow-indicator {
+
 }
 
 .details-header:hover {
@@ -353,6 +365,12 @@ html {
 
 .summary-icon, .title-summary {
   pointer-events: none;
+}
+
+.summary-icon {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 8px 8px 8px 8px;
 }
 
 .title-summary {
@@ -381,7 +399,6 @@ html {
 
 .list-assets-menu::-webkit-scrollbar {
   width: 5px;
-  
 }
 
 .list-assets-menu::-webkit-scrollbar-thumb {
