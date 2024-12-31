@@ -1,12 +1,11 @@
 import { createTable } from "./createTable.js";
 import { modalError, closeModalError } from "./components/modals.js";
 import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
+import { cnpjListEvents, cnpjListEventsRemove } from "./components/cnpjList.js";
 
 const cnpj = document.querySelector('.field');
-const infoModal = document.querySelector('.modal-info');
-const modalBg = document.querySelector('.modal-bg');
-const modal = document.querySelector('.modal');
 const btnSearch = document.querySelector('.btn-search')
+const headerDetails = document.querySelector('.details-header')
 
 // Chamada a API
 document.querySelector('.insert-company').addEventListener('submit', (e) => {
@@ -71,3 +70,13 @@ document.addEventListener('keydown', (e) => {
       closeModalError()
    }
 })
+
+headerDetails.addEventListener('click', cnpjListEvents)
+
+document.addEventListener('click', (e) => {
+   if(e.target.getElementsByTagName('body')) {
+      cnpjListEventsRemove()
+   }
+})
+
+
