@@ -11,18 +11,18 @@ const btnSearch = document.querySelector('.btn-search')
 // Chamada a API
 document.querySelector('.insert-company').addEventListener('submit', (e) => {
    btnSearch.disabled = true
-   screenLoader()
    e.preventDefault();
 
    let cnpjValue = cnpj.value;
 
    if (cnpjValue.length === 14) {
+      screenLoader()
       fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpjValue}`)
          .then(res => {
             if(!res.ok) {
                modalError('CNPJ não encontrado...')
             }
-            return res.json()
+            return res.json() 
          })
          .then(data => {
             if (data.cnpj === cnpjValue) {
@@ -34,8 +34,8 @@ document.querySelector('.insert-company').addEventListener('submit', (e) => {
             btnSearch.disabled = false
             closeScreenLoader()
          })
-         .catch(err => {
-            modalError('Houve um erro ao buscar a API')
+         .catch(() => {
+            modalError('Houve um erro ao buscar o CNPJ')
          });
    }
 

@@ -1,11 +1,12 @@
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 500px) {
     .company-card {
         flex-direction: column !important;
-        padding: 1.5rem !important;
-        height: 78% !important;
+        padding: .7rem !important;
+        height: 100% !important;
     }
 
-    .company-data {
+    .company-data.active {
+        overflow-y: hidden !important;
         border-radius: 10px !important;
     }
 
@@ -18,7 +19,17 @@
     }
 
     .project-header {
-        margin-top: 2rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .title {
+        font-size: 1.5rem !important;
+    }
+
+    .company-icon {
+        font-size: 2.5rem !important;
     }
 }
 
