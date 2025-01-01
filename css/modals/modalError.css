@@ -10,7 +10,7 @@
     left: 0;
     right: 0;
     background-color: rgba(31, 31, 31, 0.76);
-    z-index: 1;
+    z-index: 10;
     transition: 200ms ease-in-out;
  }
  

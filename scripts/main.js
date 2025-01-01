@@ -1,11 +1,12 @@
 import { createTable } from "./createTable.js";
 import { modalError, closeModalError } from "./components/modals.js";
 import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
-import { cnpjListEvents } from "./components/cnpjList.js";
+import { openList, closeOutsideList, closePressList, copyToClipboard } from "./components/cnpjList.js";
 
 const cnpj = document.querySelector(".field");
 const btnSearch = document.querySelector(".btn-search");
 const btnList = document.querySelector(".btn-list");
+const copyBtn = document.querySelectorAll('.copy-btn')
 
 // Chamada a API
 document.querySelector(".insert-company").addEventListener("submit", (e) => {
@@ -71,4 +72,15 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-btnList.addEventListener("click", cnpjListEvents);
+// Abre a lista de CNPJ
+btnList.addEventListener("click", openList);
+
+// Fecha a lista com clicando fora
+document.addEventListener('click', closeOutsideList)
+
+// Fecha a lista com ESC
+document.addEventListener('keydown', closePressList)
+
+copyBtn.forEach(cnpj => {
+  cnpj.addEventListener('click', copyToClipboard)
+})

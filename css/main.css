@@ -322,7 +322,7 @@ html {
   position: relative;
   width: 100%;
   max-width: 16rem;
-  z-index: 7;
+  z-index: 2;
   box-shadow: 1px 1.5px 5px 0.3px rgba(54, 54, 54, 0.384);
 }
 
@@ -340,7 +340,6 @@ html {
   background-color: var(--white-color);
   padding: 0 9px 0 0;
   width: 100%;
-  z-index: 6;
 }
 
 .btn-list > div {
@@ -353,15 +352,11 @@ html {
 .arrow-indicator {
   pointer-events: none;
   transition: 150ms ease-in-out;
+  font-size: 1rem;
 }
 
 .arrow-indicator.active {
   transform: rotate(180deg);
-}
-
-.btn-list:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
 }
 
 .btn-list.active {
@@ -377,7 +372,8 @@ html {
 .summary-icon {
   background-color: var(--primary-color);
   color: var(--white-color);
-  padding: 10px;
+  padding: 7px;
+  font-size: 1.2rem;
 }
 
 .title-summary {
@@ -394,7 +390,7 @@ html {
   height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
-  transition: 150ms ease-in-out;
+  transition: 100ms ease-in-out;
   position: absolute;
   background-color: var(--quaternary-color);
   right: -200%;
@@ -407,11 +403,23 @@ html {
 }
 
 .menu-list-content > li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   border: solid 2px var(--quaternary-color);
   padding: 8px 15px;
   border-radius: 3px;
   background-color: var(--white-color);
-  width: fit-content;
+}
+
+.cnpj {
+  border: 0;
+  border: 0;
+  width: 100%;
+  font-size: .8rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-family: var(--primary-font);
 }
 
 .menu-list-content::-webkit-scrollbar {
@@ -419,21 +427,11 @@ html {
 }
 
 .menu-list-content::-webkit-scrollbar-thumb {
-  border-radius: 10px;
   background-color: var(--terciary-color);
 }
 
 .menu-list-content::-webkit-scrollbar-track-piece {
   scroll-margin-right: 30px;
-}
-
-.menu-list-content > li {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 0.87rem;
-  color: var(--secondary-color);
-  font-weight: 600;
 }
 
 .copy-btn {
@@ -452,7 +450,7 @@ html {
   pointer-events: none;
 }
 
-.copy-btn > span {
+.copy-btn > .copy-text {
   font-size: 0.7rem;
   pointer-events: none;
 }
