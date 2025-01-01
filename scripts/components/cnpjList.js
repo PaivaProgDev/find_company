@@ -1,9 +1,7 @@
-const test = document.querySelector('.details-header')
+const menuListContent = document.querySelector(".menu-list-content");
+const arrowIndicator = document.querySelector(".arrow-indicator");
 
 export const cnpjListEvents = (e) => {
-    e.target.classList.toggle('active')
-}
-
-export const cnpjListEventsRemove = (e) => {
-    test.disabled = false
-}
+  menuListContent.classList.toggle("active");
+  arrowIndicator.classList.toggle("active");
+};
