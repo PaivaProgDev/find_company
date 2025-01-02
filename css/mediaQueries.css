@@ -24,7 +24,7 @@
     font-size: 2rem !important;
   }
 
-  .project-header {
+  .title-header {
     margin-top: 0 !important;
   }
 }
@@ -40,7 +40,7 @@
 }
 
 @media screen and (max-width: 268px) {
-  .project-header {
+  .title-header {
     flex-direction: column !important;
     align-items: flex-start !important;
   }

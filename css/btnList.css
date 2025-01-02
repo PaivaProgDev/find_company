@@ -1,0 +1,159 @@
+.top-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  width: 100%;
+  background-color: var(--white-color);
+}
+
+.menu-list {
+  position: relative;
+  width: 100%;
+  max-width: 16rem;
+  box-shadow: 1px 1.5px 5px 0.3px rgba(54, 54, 54, 0.384);
+}
+
+.btn-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border: solid 1px gray;
+  color: var(--primary-color);
+  border: 0;
+  cursor: pointer;
+  border: solid 2px var(--primary-color);
+  transition: 150ms ease-in-out;
+  background-color: var(--white-color);
+  padding: 0 9px 0 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn-list > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.arrow-indicator {
+  pointer-events: none;
+  transition: 150ms ease-in-out;
+  font-size: 1rem;
+}
+
+.arrow-indicator.active {
+  transform: rotate(180deg);
+}
+
+.btn-list.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.list-icon,
+.title-btn {
+  pointer-events: none;
+}
+
+.list-icon {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 7px;
+  font-size: 1.2rem;
+}
+
+.title-btn {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.menu-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: 100ms ease-in-out;
+  position: absolute;
+  background-color: rgb(243, 243, 243);
+  right: -200%;
+  width: 100%;
+  box-shadow: 1px 1.5px 5px 0.3px rgba(54, 54, 54, 0.384);
+  visibility: hidden;
+  z-index: 1;
+}
+
+.menu-list-content.active {
+  right: 0;
+  visibility: visible;
+}
+
+.menu-list-content > li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: solid 2px var(--quaternary-color);
+  padding: 8px 15px;
+  border-radius: 3px;
+  background-color: var(--white-color);
+}
+
+.menu-list-content > li:first-child {
+  background-color: transparent;
+  border: transparent;
+}
+
+.menu-info {
+  width: 100%;
+  text-align: center;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.cnpj {
+  border: 0;
+  border: 0;
+  width: 100%;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-family: var(--primary-font);
+}
+
+.menu-list-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.menu-list-content::-webkit-scrollbar-thumb {
+  background-color: var(--terciary-color);
+}
+
+.menu-list-content::-webkit-scrollbar-track-piece {
+  scroll-margin-right: 30px;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: 0;
+  cursor: pointer;
+}
+
+.copy-btn > ion-icon {
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.copy-btn > .copy-text {
+  font-size: 0.7rem;
+  pointer-events: none;
+}
