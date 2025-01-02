@@ -71,7 +71,7 @@
 .btn-close-modal-initial {
     display: flex;
     background-color: var(--primary-color);
-    padding: 8px;
+    padding: 5px;
     border-radius: 50px;
     margin-top: 1.8rem;
     cursor: pointer;
@@ -80,6 +80,7 @@
 }
 .btn-close-modal-initial:hover{
     background-color: transparent;
+    animation: animateBtn 1s  infinite;
 }
 
 .btn-close-modal-initial:hover > ion-icon{
@@ -91,6 +92,24 @@
     font-size: 1.5rem;
     color: var(--white-color);
     pointer-events: none;
+}
+
+@keyframes animateBtn {
+    0% {
+        transform: translateX(0);
+    }
+
+    35% {
+        transform: translateX(10px);
+    }
+
+    65% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 

@@ -3,6 +3,7 @@ import { modalError, closeModalError } from "./components/modalError.js";
 import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
 import { openList, closeOutsideList, closePressList, copyToClipboard } from "./components/cnpjList.js";
 import { openInitialModal, closeInitialModal, closeInitialModalOutsideClick } from "./components/modalInitial.js";
+import { saveLocal } from "./savedLocal.js";
 
 const cnpj = document.querySelector(".field");
 const btnSearch = document.querySelector(".btn-search");
@@ -11,7 +12,11 @@ const copyBtn = document.querySelectorAll('.copy-btn')
 const btnTips = document.querySelector('.btn-tips')
 
 // Abre o modal quando a página é carregada
-document.addEventListener('DOMContentLoaded', openInitialModal)
+document.addEventListener('DOMContentLoaded', () => {
+  openInitialModal()
+  const localModal = localStorage.getItem('initialModal')
+  saveLocal()
+})
 
 // Chamada a API
 document.querySelector(".insert-company").addEventListener("submit", (e) => {

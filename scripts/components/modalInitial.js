@@ -1,7 +1,6 @@
 const container = document.querySelector('.container')
 const body = document.querySelector('body')
-let initialModalContent;
-let initialModalContentChildren;
+let initialModalBg;
 
 export const openInitialModal = () => {
    const initialModal = document.createElement('dialog')
@@ -69,31 +68,22 @@ export const openInitialModal = () => {
             </button>
          </div>
     `
-
    container.appendChild(initialModal)
-   initialModalContent = initialModal
-   initialModalContent.classList.add('active')
-   initialModalContentChildren = initialModal.querySelector('.initial-modal-content')
+   initialModalBg = initialModal
+   initialModalBg.classList.add('active')
    body.classList.add('no-scroll')
 }
 
 export const closeInitialModal = (e) => {
    if (e.target.classList.contains('btn-close-modal-initial')) {
+      container.removeChild(initialModalBg)
       body.classList.remove('no-scroll')
-      initialModalContent.classList.remove('active')
-      container.removeChild(initialModalContent)
-      initialModalContent = null;
-      initialModalContentChildren = null;
    }
 }
 
 export const closeInitialModalOutsideClick = (e) => {
-   if (initialModalContentChildren && !initialModalContentChildren.contains(e.target)) {
+   if (e.target.classList.contains('initial-modal')) {
+      container.removeChild(initialModalBg)
       body.classList.remove('no-scroll')
-      initialModalContent.classList.remove('active')
-      container.removeChild(initialModalContent)
-      initialModalContent = null;
-      initialModalContentChildren = null;
    }
 }
-
