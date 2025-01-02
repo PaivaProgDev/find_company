@@ -6,7 +6,7 @@
   border: 2px solid var(--quaternary-color);
   padding: 1.5rem;
   border-radius: 10px;
-  gap: 1.5rem;
+  gap: 1rem;
   height: 22rem;
   box-shadow: 0 3px 7px 1px rgba(128, 128, 128, 0.295);
   background-color: rgb(248, 248, 248);
@@ -100,9 +100,12 @@
   max-width: 11rem;
 }
 
+.img-card.active {
+  display: none;
+}
+
 .company-data {
-  display: flex;
-  flex-direction: column;
+  display: none;
   width: 100%;
   border: solid 2px var(--quaternary-color);
   border-radius: 10px;
@@ -113,6 +116,8 @@
 }
 
 .company-data.active {
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
   margin-right: 0;
   border-radius: 10px 0 0 10px;

@@ -5,6 +5,7 @@
 @import "./modalError.css";
 @import "./btnList.css";
 @import "./card.css";
+@import "./inititalModal.css";
 
 :root {
   /* Colors */
@@ -39,8 +40,11 @@ html {
   font-family: var(--primary-font);
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +69,6 @@ html {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin-top: 2.5rem;
 }
 
 .title-header > div {
@@ -124,4 +127,23 @@ html {
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn-tips {
+  display: flex;
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background-color: var(--primary-color);
+  padding: 5px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.btn-tips > ion-icon {
+  font-size: 1.6rem;
+  color: var(--white-color);
+  pointer-events: none;
 }

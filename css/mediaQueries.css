@@ -15,11 +15,7 @@
     overflow-y: hidden !important;
     border-radius: 10px !important;
   }
-
-  .img-card {
-    display: none !important;
-  }
-
+  
   .title {
     font-size: 2rem !important;
   }
@@ -27,6 +23,11 @@
   .title-header {
     margin-top: 0 !important;
   }
+  
+  .initial-modal {
+    padding: 0 !important;
+  }
+
 }
 
 @media screen and (max-width: 375px) {

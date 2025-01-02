@@ -1,0 +1,96 @@
+.initial-modal {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    border: 0;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    z-index: 1;
+    animation: animateModal ease-in-out .4s;
+}
+
+.initial-modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.title-initial-modal {
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.subtitle-initial-modal {
+    color: var(--primary-color);
+}
+
+.initial-modal-content {
+    background-color: var(--white-color);
+    padding: 30px;
+    color: var(--secondary-color);
+    width: 100%;
+    max-width: 40rem;
+    height: 100%;
+    max-height: fit-content;
+    overflow-y: auto;
+    transition: 250ms ease-in-out;
+}
+
+.tips>li{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 0;
+}
+
+.initial-modal-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.initial-modal-tips>p {
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.observation{
+    font-weight: 700;
+}
+
+.generator-cnpj-link {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-close-modal-initial {
+    display: flex;
+    background-color: var(--primary-color);
+    padding: 8px;
+    border-radius: 50px;
+    margin-top: 1.8rem;
+    cursor: pointer;
+    border-color: var(--primary-color);
+    transition: 200ms ease-in-out;
+}
+.btn-close-modal-initial:hover{
+    background-color: transparent;
+}
+
+.btn-close-modal-initial:hover > ion-icon{
+    color: var(--primary-color);
+}
+
+.btn-close-modal-initial > ion-icon {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    pointer-events: none;
+}
+
+

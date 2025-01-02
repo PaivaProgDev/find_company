@@ -1,9 +1,17 @@
 .top-header {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   padding: 16px;
   width: 100%;
   background-color: var(--white-color);
+  justify-content: flex-end;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
 }
 
 .menu-list {

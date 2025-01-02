@@ -5,7 +5,6 @@ const btnList = document.querySelector(".btn-list");
 const cnpj = document.querySelectorAll(".cnpj");
 const field = document.querySelector(".label");
 const input = document.querySelector(".field");
-const pencilIcon = document.querySelector(".pencil-icon");
 
 export const openList = (e) => {
   menuListContent.classList.toggle("active");
@@ -29,12 +28,6 @@ const removeMenu = () => {
   menuListContent.classList.remove("active");
   arrowIndicator.classList.remove("active");
   btnList.classList.remove("active");
-};
-
-export const addMenu = () => {
-  menuListContent.classList.add("active");
-  arrowIndicator.classList.add("active");
-  btnList.classList.add("active");
 };
 
 export const copyToClipboard = (e) => {

@@ -1,12 +1,17 @@
 import { createTable } from "./createTable.js";
-import { modalError, closeModalError } from "./components/modals.js";
+import { modalError, closeModalError } from "./components/modalError.js";
 import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
-import { openList, closeOutsideList, closePressList, copyToClipboard, addMenu } from "./components/cnpjList.js";
+import { openList, closeOutsideList, closePressList, copyToClipboard } from "./components/cnpjList.js";
+import { openInitialModal, closeInitialModal, closeInitialModalOutsideClick } from "./components/modalInitial.js";
 
 const cnpj = document.querySelector(".field");
 const btnSearch = document.querySelector(".btn-search");
 const btnList = document.querySelector(".btn-list");
 const copyBtn = document.querySelectorAll('.copy-btn')
+const btnTips = document.querySelector('.btn-tips')
+
+// Abre o modal quando a página é carregada
+document.addEventListener('DOMContentLoaded', openInitialModal)
 
 // Chamada a API
 document.querySelector(".insert-company").addEventListener("submit", (e) => {
@@ -83,3 +88,13 @@ document.addEventListener('keydown', closePressList)
 
 // Copia o CNPJ para a área de transferência
 copyBtn.forEach(cnpj => cnpj.addEventListener('click', copyToClipboard))
+
+// Fecha o modal inicial com o botão
+document.addEventListener('click', closeInitialModal)
+
+// Abre o modal incial com o clique
+btnTips.addEventListener('click', openInitialModal)
+
+// Fecha o modal iniciandl clicando fora
+document.addEventListener('click', closeInitialModalOutsideClick)
+

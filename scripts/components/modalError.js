@@ -6,7 +6,7 @@ let btnClose;
 export const modalError = (messageError) => {
     const modal = document.createElement('div')
     modal.className = 'modal-bg'
-    modal.innerHTML =  `
+    modal.innerHTML = `
     <div class="modal">
         <div class="modal-header">
             <div class="alert-header">
@@ -19,7 +19,7 @@ export const modalError = (messageError) => {
         </div>
         <h3 class="modal-info">${messageError}</h3>
     </div> `
-    
+
     container.appendChild(modal)
     modal.classList.add('active')
     document.querySelector('.modal').classList.add('active')
@@ -37,7 +37,7 @@ export const closeModalError = () => {
 }
 
 const disableTab = (e) => {
-    if(e.key === 'Tab') {
+    if (e.key === 'Tab') {
         e.preventDefault();
         btnClose.focus()
     }
