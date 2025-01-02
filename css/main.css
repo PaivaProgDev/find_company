@@ -29,7 +29,7 @@ html {
 }
 
 .container {
-  height: fit-content;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,18 +41,31 @@ html {
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  align-items: center;
+  gap: 3rem;
   padding: 0.8rem 1rem 1rem 1rem;
-  height: fit-content;
+  height: 100%;
+  width: 100%;
 }
 
 /* Header */
 .project-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
+  gap: 1rem;
   margin-top: 2.5rem;
+}
+
+.project-header>div {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+}
+
+.credits-to-developer {
+  color: var(--secondary-color);
+  text-align: center;
 }
 
 .title {
@@ -68,13 +81,13 @@ html {
 }
 
 .company-card {
+  display: flex;
   position: relative;
   width: 100%;
   max-width: 40rem;
   border: 2px solid var(--quaternary-color);
   padding: 1.5rem;
   border-radius: 10px;
-  display: flex;
   gap: 1.5rem;
   height: 22rem;
   box-shadow: 0 3px 7px 1px rgba(128, 128, 128, 0.295);
@@ -313,7 +326,7 @@ html {
 .top-header {
   display: flex;
   justify-content: flex-end;
-  padding: 10px;
+  padding: 16px;
   width: 100%;
   background-color: var(--white-color);
 }
@@ -410,6 +423,17 @@ html {
   padding: 8px 15px;
   border-radius: 3px;
   background-color: var(--white-color);
+}
+
+.menu-list-content > li:first-child {
+  background-color: transparent;
+}
+
+
+.menu-info {
+  text-align: center;
+  color: var(--secondary-color);
+  font-weight: 700;
 }
 
 .cnpj {

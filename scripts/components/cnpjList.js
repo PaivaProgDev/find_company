@@ -3,7 +3,9 @@ const menuListContent = document.querySelector(".menu-list-content");
 const arrowIndicator = document.querySelector(".arrow-indicator");
 const btnList = document.querySelector('.btn-list')
 const cnpj = document.querySelectorAll('.cnpj')
-const copyText = document.querySelector('.copy-text')
+const field = document.querySelector('.label')
+const input = document.querySelector('.field')
+const pencilIcon = document.querySelector('.pencil-icon')
 
 export const openList = (e) => {
   menuListContent.classList.toggle("active");
@@ -12,39 +14,49 @@ export const openList = (e) => {
 };
 
 export const closeOutsideList = (e) => {
-  if(!menuList.contains(e.target)) {
-    menuListContent.classList.remove("active");
-    arrowIndicator.classList.remove("active");
-    btnList.classList.remove("active")
+  if (!menuList.contains(e.target) && !field.contains(e.target)) {
+    removeMenu()
   }
 };
 
 export const closePressList = (e) => {
-  if(e.key === 'Escape') {
-    menuListContent.classList.remove("active");
-    arrowIndicator.classList.remove("active");
-    btnList.classList.remove("active")
+  if (e.key === 'Escape') {
+    removeMenu()
   }
 };
 
+const removeMenu = () => {
+  menuListContent.classList.remove("active");
+  arrowIndicator.classList.remove("active");
+  btnList.classList.remove("active")
+}
+
+export const addMenu = () => {
+  menuListContent.classList.add("active");
+  arrowIndicator.classList.add("active");
+  btnList.classList.add("active")
+}
+
 export const copyToClipboard = (e) => {
   cnpj.forEach(item => {
-    if(e.target.previousElementSibling === item) {
-      const text = item.innerHTML
-
+    if (e.target.previousElementSibling === item) {
+      const text = item.innerText
       navigator.clipboard.writeText(text)
-      .then(() => {
-        if(e.target.lastChild.previousElementSibling) {
-          e.target.innerText = "Copiado!"
+        .then(() => {
+          let copyText = e.target.lastChild.previousElementSibling
+          copyText.innerText = 'Copiado'
+          e.target.style.backgroundColor = 'green';
+          input.focus()
 
           setTimeout(() => {
-            e.target.innerText = 'Copiar'
+            copyText.innerText = 'Copiar'
+            e.target.style.backgroundColor = '#5d5fef'
           }, 2000)
+        })
+      if (navigator.clipboard && navigator.clipboard.writeText) {
 
-          
-        }
-        
-      })
+      }
+
     }
   })
 }

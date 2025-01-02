@@ -1,7 +1,7 @@
 import { createTable } from "./createTable.js";
 import { modalError, closeModalError } from "./components/modals.js";
 import { screenLoader, closeScreenLoader } from "./components/screenLoad.js";
-import { openList, closeOutsideList, closePressList, copyToClipboard } from "./components/cnpjList.js";
+import { openList, closeOutsideList, closePressList, copyToClipboard, addMenu } from "./components/cnpjList.js";
 
 const cnpj = document.querySelector(".field");
 const btnSearch = document.querySelector(".btn-search");
@@ -30,13 +30,13 @@ document.querySelector(".insert-company").addEventListener("submit", (e) => {
           cnpj.value = "";
         }
       })
+      .catch(() => {
+        modalError("Houve um erro ao buscar o CNPJ");
+      })
       .finally(() => {
         btnSearch.disabled = false;
         closeScreenLoader();
       })
-      .catch(() => {
-        modalError("Houve um erro ao buscar o CNPJ");
-      });
   }
 
   if (cnpjValue.length < 14 || cnpjValue.length > 14) {
@@ -81,6 +81,5 @@ document.addEventListener('click', closeOutsideList)
 // Fecha a lista com ESC
 document.addEventListener('keydown', closePressList)
 
-copyBtn.forEach(cnpj => {
-  cnpj.addEventListener('click', copyToClipboard)
-})
+// Copia o CNPJ para a área de transferência
+copyBtn.forEach(cnpj => cnpj.addEventListener('click', copyToClipboard))

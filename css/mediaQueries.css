@@ -39,3 +39,16 @@
         align-items: flex-start !important;
     }
 }
+
+@media screen and (max-width: 290px) {
+    .menu-list-content > li {
+        flex-direction: column !important;
+        gap: 7px !important;
+        align-items: flex-start;
+        width: 100% !important;
+      }
+
+      .copy-btn {
+        align-self: flex-start;
+      }
+}
