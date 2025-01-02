@@ -25,17 +25,26 @@
 }
 
 html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: gray solid 6px;
+  transition: 150ms ease-in-out;
+}
+
+html {
   font-family: var(--primary-font);
 }
 
 .container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .main-content {
@@ -57,7 +66,7 @@ html {
   margin-top: 2.5rem;
 }
 
-.project-header>div {
+.project-header > div {
   display: flex;
   align-items: flex-end;
   gap: 0.8rem;
@@ -301,9 +310,10 @@ html {
   justify-content: center;
   height: 100vh;
   display: flex;
+  z-index: 2;
 }
 
-.screen-load::before {
+.screen-load::after {
   content: "";
   height: 40px;
   width: 40px;
@@ -335,7 +345,6 @@ html {
   position: relative;
   width: 100%;
   max-width: 16rem;
-  z-index: 2;
   box-shadow: 1px 1.5px 5px 0.3px rgba(54, 54, 54, 0.384);
 }
 
@@ -353,6 +362,7 @@ html {
   background-color: var(--white-color);
   padding: 0 9px 0 0;
   width: 100%;
+  z-index: 1;
 }
 
 .btn-list > div {
@@ -377,19 +387,19 @@ html {
   color: var(--white-color);
 }
 
-.summary-icon,
-.title-summary {
+.list-icon,
+.title-btn {
   pointer-events: none;
 }
 
-.summary-icon {
+.list-icon {
   background-color: var(--primary-color);
   color: var(--white-color);
   padding: 7px;
   font-size: 1.2rem;
 }
 
-.title-summary {
+.title-btn {
   font-size: 0.85rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -409,10 +419,13 @@ html {
   right: -200%;
   width: 100%;
   box-shadow: 1px 1.5px 5px 0.3px rgba(54, 54, 54, 0.384);
+  visibility: hidden;
+  z-index: 1;
 }
 
 .menu-list-content.active {
   right: 0;
+  visibility: visible;
 }
 
 .menu-list-content > li {
@@ -429,8 +442,8 @@ html {
   background-color: transparent;
 }
 
-
 .menu-info {
+  width: 100%;
   text-align: center;
   color: var(--secondary-color);
   font-weight: 700;
@@ -440,7 +453,7 @@ html {
   border: 0;
   border: 0;
   width: 100%;
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: var(--secondary-color);
   font-weight: 600;
   font-family: var(--primary-font);
