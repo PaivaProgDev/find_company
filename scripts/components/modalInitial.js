@@ -1,13 +1,17 @@
 import { saveLocal } from "../savedLocal.js";
 
-const container = document.querySelector('.container')
-const body = document.querySelector('body')
+const container = document.querySelector(".container");
+const body = document.querySelector("body");
 let initialModalBg;
 
 export const openInitialModal = () => {
-   const initialModal = document.createElement('dialog')
-   initialModal.className = 'initial-modal'
-   initialModal.innerHTML = `
+  if (localStorage.getItem("initial-modal") === "true") {
+    return;
+  }
+
+  const initialModal = document.createElement("dialog");
+  initialModal.className = "initial-modal";
+  initialModal.innerHTML = `
         <div class="initial-modal-content">
             <h2 class="title-initial-modal">Seja bem-vindo(a)</h2>
             <div class="initial-modal-tips">
@@ -69,25 +73,36 @@ export const openInitialModal = () => {
                <ion-icon style="pointer-events: none;" name="arrow-forward-outline"></ion-icon>
             </button>
          </div>
-    `
-   container.appendChild(initialModal)
-   initialModalBg = initialModal
-   initialModalBg.classList.add('active')
-   body.classList.add('no-scroll')
-}
+    `;
+  container.appendChild(initialModal);
+  initialModalBg = initialModal;
+  initialModalBg.classList.add("active");
+  body.classList.add("no-scroll");
+};
 
 export const closeInitialModal = (e) => {
-   if (e.target.classList.contains('btn-close-modal-initial')) {
-      initialModalBg.classList.remove('active')
-      container.removeChild(initialModalBg)
-      body.classList.remove('no-scroll')
-   }
-}
+  if (e.target.classList.contains("btn-close-modal-initial")) {
+    initialModalBg.classList.remove("active");
+    container.removeChild(initialModalBg);
+    body.classList.remove("no-scroll");
+    saveLocal();
+  }
+};
 
 export const closeInitialModalOutsideClick = (e) => {
-   if (e.target.classList.contains('initial-modal')) {
-      initialModalBg.classList.remove('active')
-      container.removeChild(initialModalBg)
-      body.classList.remove('no-scroll')
-   }
-}
+  if (e.target.classList.contains("initial-modal")) {
+    initialModalBg.classList.remove("active");
+    container.removeChild(initialModalBg);
+    body.classList.remove("no-scroll");
+    saveLocal();
+  }
+};
+
+export const closeInitialModalEsc = (e) => {
+  if (e.key === "Escape") {
+    initialModalBg.classList.remove("active");
+    container.removeChild(initialModalBg);
+    body.classList.remove("no-scroll");
+    saveLocal();
+  }
+};
