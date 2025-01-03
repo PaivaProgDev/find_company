@@ -13,7 +13,6 @@ import {
   closeInitialModalOutsideClick,
   closeInitialModalEsc,
 } from "./components/modalInitial.js";
-import { saveLocal } from "./savedLocal.js";
 
 const cnpj = document.querySelector(".field");
 const btnSearch = document.querySelector(".btn-search");
