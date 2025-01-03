@@ -37,4 +37,4 @@ CSS
 JAVASCRIPT
 
 𝘿𝙚𝙥𝙡𝙤𝙮:
-https://lnkd.in/dXQqyHS3
+[https://lnkd.in/dXQqyHS3](https://find-company.vercel.app/)
