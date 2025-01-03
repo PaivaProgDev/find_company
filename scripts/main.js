@@ -107,8 +107,8 @@ document.addEventListener("click", closeInitialModal);
 
 // Abre o modal incial com o clique
 btnTips.addEventListener("click", () => {
-  openInitialModal();
   localStorage.setItem("initial-modal", "false");
+  openInitialModal();
 });
 
 // Fecha o modal inicial clicando fora
