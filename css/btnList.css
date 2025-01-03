@@ -131,6 +131,10 @@
   color: var(--secondary-color);
   font-weight: 600;
   font-family: var(--primary-font);
+  resize: none;
+  overflow: hidden;
+  outline: 0;
+  pointer-events: none;
 }
 
 .menu-list-content::-webkit-scrollbar {
