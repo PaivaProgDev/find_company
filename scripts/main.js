@@ -45,6 +45,7 @@ document.querySelector(".insert-company").addEventListener("submit", (e) => {
         if (data.cnpj === cnpjValue) {
           createTable(data);
           cnpj.value = "";
+          cnpj.onfocus();
         }
       })
       .catch(() => {
