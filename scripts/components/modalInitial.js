@@ -1,3 +1,5 @@
+import { saveLocal } from "../savedLocal.js";
+
 const container = document.querySelector('.container')
 const body = document.querySelector('body')
 let initialModalBg;
@@ -76,6 +78,7 @@ export const openInitialModal = () => {
 
 export const closeInitialModal = (e) => {
    if (e.target.classList.contains('btn-close-modal-initial')) {
+      initialModalBg.classList.remove('active')
       container.removeChild(initialModalBg)
       body.classList.remove('no-scroll')
    }
@@ -83,6 +86,7 @@ export const closeInitialModal = (e) => {
 
 export const closeInitialModalOutsideClick = (e) => {
    if (e.target.classList.contains('initial-modal')) {
+      initialModalBg.classList.remove('active')
       container.removeChild(initialModalBg)
       body.classList.remove('no-scroll')
    }

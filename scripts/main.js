@@ -14,8 +14,6 @@ const btnTips = document.querySelector('.btn-tips')
 // Abre o modal quando a página é carregada
 document.addEventListener('DOMContentLoaded', () => {
   openInitialModal()
-  const localModal = localStorage.getItem('initialModal')
-  saveLocal()
 })
 
 // Chamada a API
